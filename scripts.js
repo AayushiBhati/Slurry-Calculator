@@ -1,22 +1,22 @@
 function calculate() {
-    let plantCapacity = parseFloat(document.getElementById("plantCapacity").value);
-    let solMass = parseFloat(document.getElementById("solMass").value);
-    let solVol = parseFloat(document.getElementById("solVol").value);
-    let slurryDensity = parseFloat(document.getElementById("slurryDensity").value);
-    let soldensity = parseFloat(document.getElementById("soldensity").value);
-    let liqdensity = parseFloat(document.getElementById("liqdensity").value);
+    const plantCapacity = parseFloat(document.getElementById('plantCapacity').value);
+    const liqdensity = parseFloat(document.getElementById('liqdensity').value);
+    const soldensity = parseFloat(document.getElementById('soldensity').value);
+    const solVol = parseFloat(document.getElementById('solVol').value);
+    const solMass = parseFloat(document.getElementById('solMass').value);
+    const slurryDensity = parseFloat(document.getElementById('slurryDensity').value);
 
-    if (isNaN(plantCapacity) || isNaN(solMass) || isNaN(solVol) || isNaN(slurryDensity) || isNaN(soldensity) || isNaN(liqdensity)) {
-        alert("Please enter valid numeric values.");
+    if (isNaN(plantCapacity) || isNaN(liqdensity) || isNaN(soldensity) || isNaN(solVol) || isNaN(solMass) || isNaN(slurryDensity)) {
+        alert('Please enter valid numeric values.');
         return;
     }
 
-    let ironOreFeed = plantCapacity * 1000000 / (24 * 330);
-    let solidsFlowRate = ironOreFeed;
-    let liquidsFlowRate = solidsFlowRate * (100 - solMass) / solMass;
-    let slurryFlowRate = (solidsFlowRate + liquidsFlowRate) / slurryDensity;
+    const ironOreFeed = plantCapacity * 1000000 / (24 * 330);
+    const solidsFlowRate = ironOreFeed;
+    const liquidsFlowRate = solidsFlowRate * (100 - solMass) / solMass;
+    const slurryFlowRate = (solidsFlowRate + liquidsFlowRate) / slurryDensity;
 
-    document.getElementById("slurryFlowRate").textContent = `Slurry Flow Rate (m3/hr): ${slurryFlowRate.toFixed(2)}`;
-    document.getElementById("solidsFlowRate").textContent = `Solids Flow Rate (TPH): ${solidsFlowRate.toFixed(2)}`;
-    document.getElementById("liquidsFlowRate").textContent = `Liquids Flow Rate (TPH): ${liquidsFlowRate.toFixed(2)}`;
+    document.getElementById('slurryFlowRate').innerText = `Slurry Flow Rate: ${slurryFlowRate.toFixed(2)} m3/hr`;
+    document.getElementById('solidsFlowRate').innerText = `Solids Flow Rate: ${solidsFlowRate.toFixed(2)} TPH`;
+    document.getElementById('liquidsFlowRate').innerText = `Liquids Flow Rate: ${liquidsFlowRate.toFixed(2)} TPH`;
 }
