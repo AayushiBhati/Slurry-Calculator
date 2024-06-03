@@ -9,30 +9,35 @@
 <body>
     <div class="container">
         <h1>Slurry Calculator</h1>
-        <label for="plantCapacity">Plant Capacity (MTPA):</label>
-        <input type="number" id="plantCapacity" required>
-        
-        <label for="solMass">Solids by Mass (%):</label>
-        <input type="number" id="solMass" required>
-        
-        <label for="solVol">Solids by Volume (%):</label>
-        <input type="number" id="solVol" required>
-        
-        <label for="slurryDensity">Slurry Density:</label>
-        <input type="number" id="slurryDensity" required>
-        
-        <label for="soldensity">Solid Density:</label>
-        <input type="number" id="soldensity" required>
-        
-        <label for="liqdensity">Liquid Density:</label>
-        <input type="number" id="liqdensity" required>
-        
+        <div class="input-group">
+            <label for="plantCapacity">Plant Capacity (MTPA):</label>
+            <input type="number" id="plantCapacity" placeholder="Enter plant capacity">
+        </div>
+        <div class="input-group">
+            <label for="solMass">Solids by Mass (%):</label>
+            <input type="number" id="solMass" placeholder="Enter solids by mass">
+        </div>
+        <div class="input-group">
+            <label for="solVol">Solids by Volume (%):</label>
+            <input type="number" id="solVol" placeholder="Enter solids by volume">
+        </div>
+        <div class="input-group">
+            <label for="slurryDensity">Slurry Density:</label>
+            <input type="number" id="slurryDensity" placeholder="Enter slurry density">
+        </div>
+        <div class="input-group">
+            <label for="soldensity">Solid Density:</label>
+            <input type="number" id="soldensity" placeholder="Enter solid density">
+        </div>
+        <div class="input-group">
+            <label for="liqdensity">Liquid Density:</label>
+            <input type="number" id="liqdensity" placeholder="Enter liquid density">
+        </div>
         <button onclick="calculate()">Calculate</button>
-        
         <div class="results">
-            <p id="slurryFlowRate">Slurry Flow Rate (m3/hr): </p>
-            <p id="solidsFlowRate">Solids Flow Rate (TPH): </p>
-            <p id="liquidsFlowRate">Liquids Flow Rate (TPH): </p>
+            <p id="slurryFlowRate">Slurry Flow Rate: </p>
+            <p id="solidsFlowRate">Solids Flow Rate: </p>
+            <p id="liquidsFlowRate">Liquids Flow Rate: </p>
         </div>
     </div>
     <script src="scripts.js"></script>
